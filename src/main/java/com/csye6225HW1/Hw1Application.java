@@ -11,9 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-
 @MapperScan({"com.csye6225HW1.dao","com.gitee.sunchenbin.mybatis.actable.dao.*"})
-
 //当我们定义的@componentScan会覆盖@SpringBootApplication扫描的范围，也就是com.csye6225HW1
 //因此我们需要在@componentScan中添加当前工程需要扫描的包范围。
 @ComponentScan({"com.gitee.sunchenbin.mybatis.actable.manager.*","com.csye6225HW1"})
@@ -24,6 +22,9 @@ public class Hw1Application {
         //SpringApplication.run(Hw1Application.class, args);
         StartUpHandler bean =run.getBean(StartUpHandler.class, args);
         bean.startHandler();
+
+
+
     }
 
 }

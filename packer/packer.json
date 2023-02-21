@@ -1,12 +1,15 @@
 
+
 {
+  
+
   "variables": {
-    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+
     "aws_region": "us-west-2",
     "source_ami": "ami-0f1a5f5ada0e7da53",
     "instance_type": "t2.micro"
   },
+
 
 
   "builders": [
@@ -14,11 +17,13 @@
       "type": "amazon-ebs",
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
+
       "source_ami":"{{user `source_ami`}}",
       
       "region": "{{user `aws_region`}}",
      
       "instance_type":"{{user `instance_type`}}",
+
       "ssh_username": "ec2-user",
       "ami_name": "webapp-{{timestamp}}",
       "ami_users": ["814613584038", "187570859166"],
@@ -96,7 +101,9 @@
     
   ],
   
-  "sensitive-variables": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"],
+
+  "sensitive-variables": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+
 
 }
   
